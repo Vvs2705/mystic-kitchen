@@ -1,3 +1,8 @@
+> **Revisão 2026-11-27 (Conselho do TIME DE JOGOS) — veredito: ARQUIVAR (confirma o §44).** Ata: [`conselho/2026-11-27-revisao-gdd.md`](conselho/2026-11-27-revisao-gdd.md); visão do portfólio: `JOGOS NOVOS/00_PESQUISA/CONSELHO_PORTFOLIO_2026-11-27.md`.
+> 1. Nada mudou desde 2026-10-09: o merge-2 continua concentrado e exige cadência de conteúdo que um dev solo não sustenta.
+> 2. **O que sai daqui para o portfólio:** M1 (pedido só aparece se o solver provar que tem solução) e M6 (níveis fechados com tema de cozinha) como candidato ao slot de puzzle **depois** do Rune Relay e do Skyhold terem coorte (§47).
+> 3. **Os conflitos 1 a 4 da seção de lições foram resolvidos** (§47.2), para o GDD ficar coerente caso seja reaberto.
+
 # MYSTIC KITCHEN
 
 ## Game Design Document — Versão de Produto
@@ -1747,3 +1752,29 @@ O Dungeon Courier (DC) chegou à 1.4.1-beta com o GDD inteiro feito, arte v2, tu
 5. Pintar no gerador grátis a folha das 2 cadeias do MVP (12 itens) e adaptar o `folha_produtos.py` para a checagem de silhuetas; 0 crédito.
 6. Copiar o esqueleto do DC (`Setup.cs`, `coretests`, `viewcheck`, `Art.cs`, `Tour.cs` e `Textos.cs`) e fazer o núcleo do tabuleiro com o bot medindo o K4.
 7. Gravar o build mínimo com `-record`, montar os criativos com `criativos.py` e só então rodar o Gate 0 de IPM.
+
+
+---
+
+# 47. REVISÃO DO CONSELHO E PLANO A PARTIR DE 2026-11-27
+
+## 47.1 Arquivado, com duas peças em uso
+
+| Peça | Destino | Estado |
+|---|---|---|
+| **M1** gerador de pedidos com prova do solver | o mesmo princípio já está no Skyhold (S1, fila provada solúvel) e no Rune Relay (solução única); não precisa de repositório próprio | absorvido |
+| **M6** níveis fechados de cozinha | candidato a 3º puzzle, avaliado só depois das coortes do Rune Relay e do Skyhold | em espera |
+
+O passo 2 dos "primeiros passos" da seção de lições (extrair `OrderGenerator` + `Solver` em C#) fica **cancelado**: o Skyhold já constrói o solver com fila e doca, que cobre o caso.
+
+**O que reabriria:** um publisher ou plataforma de assinatura interessado (ângulo E do §44), ou o M6 aprovado como jogo próprio pelo Vinicius depois das duas coortes de puzzle.
+
+## 47.2 Conflitos da seção de lições, resolvidos (valem se reabrir)
+
+| # | Conflito | Decisão |
+|---|---|---|
+| 1 | energia comprável + gerador com item raro = sorteio pago indireto | **M2 (sem energia)**; item raro por contador visível ("a cada 10 gerações, 1 raro") |
+| 2 | raridade de receita e item raro do baú semanal | raridade por receita conhecida, nunca por drop |
+| 3 | storage pago, bolha | storage só por progresso ou estrelas; bolha paga cortada |
+| 4 | 24 managers (§36) | núcleo puro com `Sim` e sistemas puros; CloudSave e RemoteConfig fora do núcleo |
+| 5–7 | criativos antes de código, arte 3D, live-service | ficam como a seção de lições recomenda; não mudam o arquivamento |
